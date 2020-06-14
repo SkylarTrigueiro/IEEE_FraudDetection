@@ -20,6 +20,14 @@ def get_features(train, submission ):
     
     return train, y
 
+def bin_features(df):
+
+    FEATURES = list(df.columns)
+    CATEG = [ var for var in FEATURES if df[var].dtype == 'O' ]
+    NUMERIC = [var for var in FEATURES if df[var].dtype != 'O'  ]
+    
+    return NUMERIC, CATEG
+    
 def partition_features(train, submission, both):
     
     if( not config.KAGGLE_CHEATS ):
