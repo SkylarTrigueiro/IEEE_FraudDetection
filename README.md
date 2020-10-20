@@ -38,10 +38,24 @@ Categorical Features:
 2. DeviceInfo
 3. id12 - id38
 
-|         | Fraud  | Not Fraud |
-|---------|--------|-----------|
-| Count   | 569877 | 20663     |
-| Percent | 96.5   | 3.5       |
+### EDA Summary
+
+Not a lot of data is provided about how the data was generated. User IDs are not provided to preserve anonymity, but . The training data and the submission data take place over approximately a year of transactions with a month missing in between the training and submission. The following plot highlights the distribution of transactions from the training data and the test data where the public and private portion of the leaderboard starts.
+
+![](images/train_test_pup_test_priv.png)
+
+No dates are given, just time measured in seconds. It's possible to infer the dates and a lot of Kagglers believe that the spike in transactions towards the beginning implies that the first month is December and that the spike is
+
+Based on the following table, we can quickly see that there is an imbalance between the number of fraudulent versus legitimate transactions.
+
+|            | Count  | Percent |
+|------------|--------|---------|
+| Fraud      | 569877 | 96.5    |
+| Legitimate | 20663  | 3.5     |
+
+One of the most important features for determing fraudulent transactions is the transaction amount. The following plot shows Transaction Amount over time. 
+
+![](images/train_transactionAmt.png)
 
 ## References
 
